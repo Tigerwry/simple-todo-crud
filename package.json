@@ -1,0 +1,26 @@
+{
+  "name": "simple-todo-crud-batch18",
+  "version": "1.0.0",
+  "description": "Console-based TODO CRUD application built with Node.js, MySQL and npm workspaces",
+  "private": true,
+  "type": "commonjs",
+  "workspaces": [
+    "shared",
+    "api"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=api",
+    "server": "npm run server --workspace=api",
+    "db:setup": "mysql -u ${DB_USER:-root} -p < database.sql"
+  },
+  "keywords": [
+    "todo",
+    "crud",
+    "mysql",
+    "console",
+    "monorepo",
+    "npm-workspaces"
+  ],
+  "author": "",
+  "license": "MIT"
+}

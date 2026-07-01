@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard · Todo App</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/animation.css" />
+  </head>
+  <body data-page="dashboard">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">
+        <span class="logo-badge animate-wiggle" aria-hidden="true">✅</span>
+        <span>Todo<span style="color: var(--c2)">Max</span></span>
+      </div>
+      <div class="navbar-user">
+        <span class="hello">Hey, <b id="hello-name">friend</b> 👋</span>
+        <button class="btn btn-secondary btn-sm" id="logout-btn">Logout</button>
+      </div>
+    </nav>
+
+    <main class="app container section">
+      <!-- Header -->
+      <header style="margin-bottom: 32px">
+        <p class="eyebrow">Your mission control</p>
+        <h1 class="gradient-text">Task Dashboard</h1>
+      </header>
+
+      <!-- Statistics -->
+      <section id="stats" class="stats-grid" aria-label="Task statistics"></section>
+
+      <!-- Toolbar: search + add -->
+      <section class="toolbar">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            class="input"
+            id="search-input"
+            type="search"
+            placeholder="Search by title or description…"
+            aria-label="Search tasks"
+          />
+        </div>
+        <button class="btn btn-primary" id="add-task-btn">✨ Add Task</button>
+      </section>
+
+      <!-- Task grid -->
+      <section id="task-grid" class="task-grid" aria-live="polite"></section>
+    </main>
+
+    <footer class="footer">Built with 💜 &amp; too many colors · TodoMax</footer>
+
+    <!-- Add / Edit modal -->
+    <div class="modal-overlay" id="task-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal">
+        <button class="modal-close" type="button" data-close aria-label="Close">✕</button>
+        <h2 class="modal-title" id="modal-title">✨ Add Task</h2>
+        <form id="task-form" novalidate>
+          <input type="hidden" name="id" />
+          <div class="form-grid">
+            <div class="field full">
+              <label for="task-title">Title *</label>
+              <input class="input" id="task-title" name="title" type="text" placeholder="What needs doing?" required />
+              <span class="field-error" data-error="title"></span>
+            </div>
+            <div class="field full">
+              <label for="task-desc">Description</label>
+              <textarea class="textarea" id="task-desc" name="description" placeholder="Add some details…"></textarea>
+            </div>
+            <div class="field">
+              <label for="task-due">Due date</label>
+              <input class="input" id="task-due" name="dueDate" type="date" />
+            </div>
+            <div class="field">
+              <label for="task-priority">Priority</label>
+              <select class="select" id="task-priority" name="priority">
+                <option value="Low">🌱 Low</option>
+                <option value="Medium" selected>⚡ Medium</option>
+                <option value="High">🔥 High</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="task-status">Status</label>
+              <select class="select" id="task-status" name="status">
+                <option value="Pending" selected>⏳ Pending</option>
+                <option value="Completed">✅ Completed</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-secondary" type="button" data-close>Cancel</button>
+            <button class="btn btn-primary" type="submit">💾 Save Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="/js/app.js"></script>
+    <script type="module" src="/js/task.js"></script>
+  </body>
+</html>

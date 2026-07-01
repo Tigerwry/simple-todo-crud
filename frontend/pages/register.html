@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register · Todo App</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=DM+Sans:wght@400;500;700&family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/animation.css" />
+  </head>
+  <body data-page="register">
+    <main class="app auth-shell">
+      <div class="card animate-pulse-glow" style="max-width: 500px; width: 100%; border-color: var(--c2); box-shadow: var(--shadow-hard-c2)">
+        <div class="stack" style="align-items: center; text-align: center">
+          <div class="brand" style="justify-content: center">
+            <span class="logo-badge animate-wiggle" aria-hidden="true">🎉</span>
+          </div>
+          <p class="eyebrow" style="color: var(--c2)">Join the chaos</p>
+          <h1 class="gradient-text" style="font-size: clamp(2.5rem, 9vw, 4rem)">Sign Up</h1>
+          <p class="muted-text">Create an account and start crushing your to-dos. 💥</p>
+        </div>
+
+        <form id="register-form" class="stack" style="margin-top: 28px" novalidate>
+          <div class="field">
+            <label for="reg-name">Name</label>
+            <input class="input" id="reg-name" name="name" type="text" placeholder="Ada Lovelace" autocomplete="name" required />
+            <span class="field-error" data-error="name"></span>
+          </div>
+          <div class="field">
+            <label for="reg-email">Email</label>
+            <input class="input" id="reg-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <span class="field-error" data-error="email"></span>
+          </div>
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input class="input" id="reg-password" name="password" type="password" placeholder="At least 4 characters" autocomplete="new-password" required />
+            <span class="field-error" data-error="password"></span>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">🎉 Create account</button>
+        </form>
+
+        <p class="muted-text" style="text-align: center; margin-top: 22px">
+          Already have an account? <a href="/pages/login.html">Log in →</a>
+        </p>
+      </div>
+    </main>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

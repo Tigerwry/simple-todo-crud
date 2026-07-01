@@ -1,0 +1,7 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "Shared constants and enums for the simple-todo-crud-batch18 monorepo",
+  "main": "constants.js",
+  "license": "MIT"
+}
