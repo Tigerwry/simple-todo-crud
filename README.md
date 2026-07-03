@@ -33,7 +33,12 @@ additive** — it reuses the existing services and does not modify the console a
 
 _Add a link to your video walkthrough here._
 
-- Demo video: _placeholder — e.g. Screencast from 2026-07-03 09-18-24.webm
+- Demo video: _placeholder — e.g. 
+
+https://github.com/user-attachments/assets/53bc0759-91f8-45b9-8716-556e8a633edb
+
+
+
 
 Suggested demo script: register → login → add a task → edit it → search → delete
 (with confirmation) → logout.
